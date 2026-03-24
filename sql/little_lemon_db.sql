@@ -44,7 +44,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `little_lemon_db`.`bookings` (
   `booking_id` INT NOT NULL,
   `customer_id` INT NOT NULL,
-  `date` DATE NOT NULL,
+  `booking_date` DATE NOT NULL,
   `table_number` INT NOT NULL,
   PRIMARY KEY (`booking_id`),
   INDEX `fk_customers_idx` (`customer_id` ASC) VISIBLE,
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `little_lemon_db`.`orders` (
   `order_id` INT NOT NULL,
   `booking_id` INT NOT NULL,
   `menu_id` INT NOT NULL,
-  `date` DATE NOT NULL,
+  `order_date` DATE NOT NULL,
   `quantity` INT NOT NULL,
   `total_cost` DECIMAL NOT NULL,
   PRIMARY KEY (`order_id`),
@@ -119,7 +119,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `little_lemon_db`.`order_delivery` (
   `delivery_id` INT NOT NULL,
   `order_id` INT NOT NULL,
-  `date` DATE NOT NULL,
+  `delivery_date` DATE NOT NULL,
   `status` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`delivery_id`),
   INDEX `fk_orders_idx` (`order_id` ASC) VISIBLE,
