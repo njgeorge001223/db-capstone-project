@@ -1,6 +1,6 @@
 DELIMITER //
 
-CREATE PROCEDURE CancelOrder(IN order_id_to_cancel INT)
+CREATE PROCEDURE cancel_order(IN order_id_to_cancel INT)
 BEGIN
     -- 1. Delete the record from the orders table
     DELETE FROM orders 
